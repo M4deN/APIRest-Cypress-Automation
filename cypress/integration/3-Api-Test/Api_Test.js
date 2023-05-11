@@ -19,13 +19,13 @@ describe('Exemplo Testes APIREST', () => {
         cy.request('POST', `${API_URL}`, {descricao: 'Programação Web 2', concluida: false }).then(
             (response) => {
                 //response.body é serializado automaticamente no JSON
-                expect(response.body).to.have.property('descricao', 'Programação Web 2', 'concluida',false) // true
+                expect(response.body).to.have.property('descricao', 'Programação Web 2', 'concluida',false)
             })
             
     })
 
     it('Teste Inserindo Registro na API POST Verificando Propriedades body', () => {
-        cy.request('POST', 'http://localhost:3000/tarefas', {         
+        cy.request('POST', `${API_URL}`, {         
           descricao: "Linguagem de Programação", 
           concluida: true 
         }).then((response) => {
@@ -74,7 +74,7 @@ describe('Exemplo Testes APIREST', () => {
       it('Deve retornar erro ao inserir tarefa sem descrição', () => {
         cy.request({
           method: 'POST',
-          url: 'http://localhost:3000/tarefas',
+          url: `${API_URL}`,
           body: { 
             concluida: true 
           },
