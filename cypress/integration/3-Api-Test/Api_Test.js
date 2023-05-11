@@ -1,4 +1,6 @@
-/// <reference types="cypress" />
+///<reference types="cypress" />
+
+const API_URL = Cypress.env('API_BASE_URL')
 
 describe('Exemplo Testes APIREST', () => {
    
@@ -14,7 +16,7 @@ describe('Exemplo Testes APIREST', () => {
         })
       })
     it('Teste Inserindo Registro na API POST', () => {
-        cy.request('POST', 'http://localhost:3000/tarefas', {descricao: 'Programação Web 2', concluida: false }).then(
+        cy.request('POST', `${API_URL}`, {descricao: 'Programação Web 2', concluida: false }).then(
             (response) => {
                 //response.body é serializado automaticamente no JSON
                 expect(response.body).to.have.property('descricao', 'Programação Web 2', 'concluida',false) // true
@@ -28,8 +30,8 @@ describe('Exemplo Testes APIREST', () => {
           concluida: true 
         }).then((response) => {
           expect(response.status).to.eq(200); // verifica o status da resposta
-          expect(response.body).to.have.property('descricao', 'Linguagem de Programação');
-          expect(response.body).to.have.property('concluida', true);
+          expect(response.body).to.have.property('descricao', 'Linguagem de Programação')
+          expect(response.body).to.have.property('concluida', true)
         })
       })
 
@@ -41,23 +43,25 @@ describe('Exemplo Testes APIREST', () => {
             })
             
       })
-
+      
       /*it('Teste Deletando Registro DELETE', () => {
         cy.request({
           method: 'DELETE',
           url: 'http://localhost:3000/tarefas/1',
           failOnStatusCode: false
         }).then((response) => {
-          expect(response.status).to.eq(200); // verifica o status da resposta
-          expect(response.body).to.eq('Tarefa excluída com sucesso'); // verifica a mensagem de sucesso esperada
-        });
-      });*/
+          expect(response.status).to.eq(200) // verifica o status da resposta
+          expect(response.body).to.eq('Tarefa excluída com sucesso') // verifica a mensagem de sucesso esperada
+        })
+      })*/
 
       it('Verificando Item Adicionado GET', () => {
         cy.request({
             method:'GET',
             url: 'http://localhost:3000/tarefas/2',
-            failOnStatusCode: false       
+            failOnStatusCode: false//é definida como false, o teste não falhará automaticamente se o código de status da resposta não estiver na faixa 2xx ou 3xx. 
+            //Isso significa que mesmo se a resposta tiver um código de status que indique um erro do cliente (4xx) ou um erro do servidor (5xx), 
+            //o teste ainda continuará a ser executado. Isso pode ser útil em situações em que você deseja testar como seu aplicativo lida com respostas de erro.       
         }).should(({status, body})=>{
             const{id,descricao,concluida} = body
             expect(status).to.eq(200)
@@ -75,9 +79,9 @@ describe('Exemplo Testes APIREST', () => {
             concluida: true 
           },
           failOnStatusCode: false
-        }).then((response) => {
-          expect(response.status).to.eq(400); // verifica o status da resposta
-          expect(response.body).to.eq('"descricao" is required'); // verifica a mensagem de erro esperada
+        }).then((abdf) => {
+          expect(abdf.status).to.eq(400); // verifica o status da resposta
+          expect(abdf.body).to.eq('"descricao" is required'); // verifica a mensagem de erro esperada
         })
       })
 
@@ -91,8 +95,8 @@ describe('Exemplo Testes APIREST', () => {
           },
           failOnStatusCode: false
         }).then((response) => {
-          expect(response.status).to.eq(400); // verifica o status da resposta
-          expect(response.body).to.eq('"descricao" length must be at least 3 characters long'); // verifica a mensagem de erro esperada
+          expect(response.status).to.eq(400) 
+          expect(response.body).to.eq('"descricao" length must be at least 3 characters long') 
         })
       })
 
@@ -102,8 +106,8 @@ describe('Exemplo Testes APIREST', () => {
           url: 'http://localhost:3000/tarefas/-1',
           failOnStatusCode: false
         }).then((response) => {
-          expect(response.status).to.eq(400); // verifica o status da resposta
-          expect(response.body).to.eq('"value" must be a positive number'); // verifica a mensagem de erro esperada
+          expect(response.status).to.eq(400)
+          expect(response.body).to.eq('"value" must be a positive number')
         })
       })
 
@@ -117,8 +121,8 @@ describe('Exemplo Testes APIREST', () => {
           },
           failOnStatusCode: false
         }).then((response) => {
-          expect(response.status).to.eq(400); // verifica o status da resposta
-          expect(response.body).to.eq('"value" must be a positive number'); // verifica a mensagem de erro esperada
+          expect(response.status).to.eq(400)
+          expect(response.body).to.eq('"value" must be a positive number')
         })
       })
 
@@ -129,7 +133,6 @@ describe('Exemplo Testes APIREST', () => {
           url: 'http://localhost:3000/tarefas/123456',
           failOnStatusCode: false
         }).then((response) => {
-          // Verifica se a resposta retornou um erro 404 (não encontrado)
           expect(response.status).to.eq(404)
         })
       })

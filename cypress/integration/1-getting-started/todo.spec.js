@@ -1,4 +1,4 @@
-/*// <reference types="cypress" />
+/// <reference types="cypress" />
 
 // Welcome to Cypress!
 //
@@ -141,4 +141,3 @@ describe('example to-do app', () => {
     })
   })
 })
-*/
