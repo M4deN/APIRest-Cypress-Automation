@@ -6,6 +6,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "start": "nodemon -e index.js",
+    "cypress:run": "cypress run",
     "test": "cypress run"
   },
   "author": "",
