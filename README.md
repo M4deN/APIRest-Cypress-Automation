@@ -1,5 +1,3 @@
-# APIRest_Cypress_Automation
- 
 # APIREST Cypress Automation
 
 Este repositório contém uma aplicação de exemplo desenvolvida com Node.js, Express e Cypress para realizar testes automatizados em uma API REST. A aplicação utiliza o banco de dados MongoDB para persistência dos dados.
