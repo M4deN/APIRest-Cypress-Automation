@@ -6,7 +6,7 @@ Este repositório contém uma aplicação de exemplo desenvolvida com Node.js, E
 
 Siga as etapas abaixo para executar a aplicação:
 
-1. Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina.
+1. Certifique-se de ter o Node.js instalado em sua máquina.
 
 2. Faça o clone deste repositório em sua máquina local.
 
