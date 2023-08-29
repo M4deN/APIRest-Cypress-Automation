@@ -2,7 +2,7 @@
 
 const API_URL = Cypress.env('API_BASE_URL')
 
-describe('Exemplo Testes APIREST', () => {
+describe('Testes APIREST', () => {
    
     it('Teste Error 404 Not Found', () => {
         cy.request({

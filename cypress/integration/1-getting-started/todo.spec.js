@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+/*/// <reference types="cypress" />
 
 // Welcome to Cypress!
 //
@@ -140,4 +140,4 @@ describe('example to-do app', () => {
       cy.contains('Clear completed').should('not.exist')
     })
   })
-})
+})*/
