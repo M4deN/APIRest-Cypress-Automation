@@ -43,8 +43,8 @@ describe('Testes APIREST', () => {
             })
             
       })
-      
-      /*it('Teste Deletando Registro DELETE', () => {
+      //Teste de deletar passa apenas uma vez para o registro de ID 1
+      it('Teste Deletando Registro DELETE', () => {
         cy.request({
           method: 'DELETE',
           url: 'http://localhost:3000/tarefas/1',
@@ -53,7 +53,7 @@ describe('Testes APIREST', () => {
           expect(response.status).to.eq(200) // verifica o status da resposta
           expect(response.body).to.eq('Tarefa excluída com sucesso') // verifica a mensagem de sucesso esperada
         })
-      })*/
+      })
 
       it('Verificando Item Adicionado GET', () => {
         cy.request({
@@ -137,7 +137,7 @@ describe('Testes APIREST', () => {
         })
       })
 
-      it('Verifica se a rota /tarefas responde com status 200 e sem corpo', () => {
+      it('Verifica se a rota /tarefas responde com status 200 e sem body', () => {
         cy.request({
           method: 'HEAD',
           url: 'http://localhost:3000/tarefas'
