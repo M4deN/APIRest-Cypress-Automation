@@ -68,6 +68,16 @@ As seguintes tecnologias e dependências são necessárias para executar a aplic
 
 Certifique-se de ter essas tecnologias instaladas em sua máquina antes de executar a aplicação.
 
+## CI (Integração Contínua)
+
+O projeto utiliza GitHub Actions para execução de testes automatizados em ambientes de integração contínua. A configuração do fluxo de trabalho pode ser encontrada no arquivo `.github/workflows`:
+
+### Arquivo: .github/workflows/main.yml
+
+```yaml
+name: End-to-end tests 🧪
+```
+
 ## Licença
 
 Este projeto está licenciado sob a licença ISC.
