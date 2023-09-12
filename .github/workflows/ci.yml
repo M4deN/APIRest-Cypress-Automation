@@ -1,4 +1,4 @@
-ame: Integração Contínua
+name: Integração Contínua
 
 on:
   push:
