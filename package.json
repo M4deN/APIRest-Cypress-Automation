@@ -4,10 +4,10 @@
   "description": "Projeto Seminário Framewoorks WEB Automação testes de APIREST",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open",
     "start": "nodemon -e index.js",
-    "cypress:run": "cypress run",
-    "test": "cypress run"
+    "cy:open": "cypress open",
+    "test": "cypress run",
+    "test:mobile": "cypress run --config viewportWidth=370 viewportHeight=660"
   },
   "author": "",
   "license": "ISC",
