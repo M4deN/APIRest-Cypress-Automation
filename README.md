@@ -75,7 +75,7 @@ O projeto utiliza GitHub Actions para execução de testes automatizados em ambi
 ### Arquivo: .github/workflows/main.yml
 
 ```yaml
-name: End-to-end tests 🧪
+name: API-RESTFUL Tests 🧪
 ```
 
 ## Licença
