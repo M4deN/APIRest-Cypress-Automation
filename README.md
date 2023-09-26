@@ -80,4 +80,4 @@ name: API-RESTFUL Tests 🧪
 
 ## Licença
 
-Este projeto está licenciado sob a licença ISC.
+Este projeto está licenciado sob a licença MIT.
