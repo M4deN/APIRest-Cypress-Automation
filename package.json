@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -e index.js",
-    "cy:open": "cypress open",
-    "test": "cypress run",
-    "test:mobile": "cypress run --config viewportWidth=370 viewportHeight=660"
+    "test": "cypress run --reporter nyan",
+    "cy:open": "cypress open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^9.5.0",
+    "cypress": "^13.3.0",
+    "cypress-plugin-api": "^2.11.1",
     "express": "^4.18.2",
     "joi": "^17.9.1",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.1"
   }
 }

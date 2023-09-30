@@ -3,25 +3,23 @@
 const API_URL = Cypress.env('API_BASE_URL')
 
 describe('Testes APIREST', () => {
-   
+  
     it('Teste Error 404 Not Found', () => {
-        cy.request({
+      cy.request({
             method:'GET',
             url: 'http://localhost:3000/tarefas/60',
             failOnStatusCode: false           
         }).should(({status, body})=>{
             expect(status).to.eq(404)
-            expect(body).to.eq("Tarefa não encontrada")
-        
+            expect(body).to.eq("Tarefa não encontrada")        
         })
-      })
+    })
     it('Teste Inserindo Registro na API POST', () => {
         cy.request('POST', `${API_URL}`, {descricao: 'Programação Web 2', concluida: false }).then(
             (response) => {
                 //response.body é serializado automaticamente no JSON
                 expect(response.body).to.have.property('descricao', 'Programação Web 2', 'concluida',false)
             })
-            
     })
 
     it('Teste Inserindo Registro na API POST Verificando Propriedades body', () => {
@@ -41,7 +39,6 @@ describe('Testes APIREST', () => {
                 //response.body é serializado automaticamente no JSON
                 expect(response.body).to.have.property('descricao', 'Programação Web 3', 'concluida',false) // true
             })
-            
       })
       //Teste de deletar passa apenas uma vez para o registro de ID 1
       it('Teste Deletando Registro DELETE', () => {
@@ -145,7 +142,5 @@ describe('Testes APIREST', () => {
           expect(response.status).to.eq(200)
           expect(response.body).to.be.empty
         })
-      })
-    
+      })    
 })
-
