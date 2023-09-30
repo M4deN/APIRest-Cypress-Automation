@@ -1,6 +1,7 @@
 # APIREST Cypress Automation
 
-Este repositório contém uma aplicação de exemplo desenvolvida com Node.js, Express e Cypress para realizar testes automatizados em uma API REST. 
+Projeto desenvolvido para a apresentação do seminário sobre frameworks web back-end da disciplina de programação web 2
+Este repositório contém uma aplicação de API REST desenvolvida com Node.js, Express e Cypress para realizar testes automatizados. 
 ## Como executar a aplicação
 
 Siga as etapas abaixo para executar a aplicação:
@@ -17,13 +18,7 @@ Siga as etapas abaixo para executar a aplicação:
 npm install
 ```
 
-5. Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis de ambiente:
-
-```plaintext
-API_BASE_URL=http://localhost:3000
-```
-
-6. Inicie o servidor com o seguinte comando:
+5. Inicie o servidor com o seguinte comando:
 
 ```shell
 npm start
@@ -45,15 +40,14 @@ Siga as etapas abaixo para executar os testes automatizados com Cypress:
 npm run cy:open
 ```
 
-4. Na janela do Cypress, clique no arquivo `api_rest_cypress.spec.js` para executar os testes automatizados.
+4. Na janela do Cypress, clique no arquivo `api.cy.js` para executar os testes automatizados.
 
 Os testes serão executados e você poderá ver os resultados na interface do Cypress.
 
 ## Estrutura do projeto
 
 - O arquivo `index.js` contém o código da aplicação, incluindo as rotas e a lógica de manipulação dos dados.
-- O arquivo `api_rest_cypress.spec.js` contém os testes automatizados escritos com o framework Cypress.
-- O arquivo `.env` (a ser criado) armazena as variáveis de ambiente necessárias para a execução da aplicação.
+- O arquivo `api.cy.js` contém os testes automatizados escritos com o framework Cypress.
 - O arquivo `package.json` contém as dependências e os scripts para executar a aplicação e os testes automatizados.
 
 ## Requisitos
@@ -70,7 +64,7 @@ Certifique-se de ter essas tecnologias instaladas em sua máquina antes de execu
 
 ## Testes Rodando
 
-https://github.com/M4deN/APIRest-Cypress-Automation/assets/43422425/4052c81d-b389-4b6a-8161-89c03984636b
+https://github.com/M4deN/APIRest-Cypress-Automation/assets/43422425/04a36ee5-6ac2-43c0-925c-7a21837e2beb
 
 
 ## CI (Integração Contínua)
