@@ -1,5 +1,7 @@
 # APIREST Cypress Automation
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/M4deN/APIRest-Cypress-Automation/ci.yml?label=Test%20Workflows&logo=GitHub&style=for-the-badge)
+
 Projeto desenvolvido para a apresentação do seminário sobre frameworks web back-end da disciplina de programação web 2
 Este repositório contém uma aplicação de API REST desenvolvida com Node.js, Express e Cypress para realizar testes automatizados. 
 ## Como executar a aplicação
